@@ -8,7 +8,7 @@ ingredients = JSON.parse(open(url_ingredients).read)
 Ingredient.destroy_all
 
 ingredients["drinks"].each do |ingredient|
-  Ingredient.create!(name: ingredient.values.to_s)
+  Ingredient.create!(name: ingredient["strIngredient1"].to_s)
 end
 
 # Cocktails
