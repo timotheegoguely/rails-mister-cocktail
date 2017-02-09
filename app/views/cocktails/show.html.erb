@@ -1,19 +1,24 @@
-<h2><%= @cocktail.name %></h2>
-<hr>
+<div class="row">
+  <div class="col-xs-12">
 
-<h3>Ingredients</h3>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li>
-      <%= dose.description %> of <%= dose.ingredient.name %>
-      <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
-    </li>
-  <% end %>
-</ul>
+    <h2><%= @cocktail.name %></h2>
+    <hr>
 
-<%= link_to "← Back to cocktails", cocktails_path, class: "btn btn-default" %>
+    <h3>Ingredients</h3>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li>
+          <%= dose.description %> of <%= dose.ingredient.name %>
+          <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+        </li>
+      <% end %>
+    </ul>
 
-<%= link_to "+ Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    <%= link_to "← Back to cocktails", cocktails_path, class: "btn btn-default" %>
 
+    <%= link_to "+ Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
 
-<%= render "/doses/form", cocktail: @cocktail, dose: @dose %>
+    <%= render "/doses/form", cocktail: @cocktail, dose: @dose %>
+
+  </div>
+</div>

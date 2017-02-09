@@ -1,0 +1,50 @@
+.card {
+  height: 256px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin-bottom: $lg;
+  border-radius: $border-radius-base;
+  &-user {
+    position: absolute;
+    right: $md;
+    top: $md;
+  }
+  &-category {
+    position: absolute;
+    top: $md;
+    left: $md;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  &-description {
+    position: absolute;
+    bottom: $md;
+    left: $md;
+    h3 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+    p {
+      font-size: 13px;
+    }
+    a {
+      color: #fff;
+    }
+  }
+  &-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index:2;
+    background: black;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    &:hover {
+      opacity: 0.1;
+    }
+  }
+}

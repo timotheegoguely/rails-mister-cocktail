@@ -1,8 +1,21 @@
-<h2>All cocktails</h2>
-<hr>
+<div class="row">
 
-<ul>
+  <div class="col-xs-12 heading">
+    <%= link_to "Add a drink", new_cocktail_path, class: "pull-right btn btn-primary btn-large" %>
+    <h2>All cocktails</h2>
+    <hr>
+  </div>
+
   <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card" style="background: linear-gradient(to bottom, rgba(0,0,0,0.1) 33%, rgba(0,0,0,0.3) 100%), url(<%= cocktail.image %>);">
+        <!--<div class="card-category">Category</div>-->
+        <div class="card-description">
+          <h3><%= cocktail.name %></h3>
+        </div>
+        <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+      </div>
+    </div>
   <% end %>
-</ul>
+
+</div>
