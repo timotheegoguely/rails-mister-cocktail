@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 heading">
+
+      <h2>Add your cocktail</h2>
+
+      <%= render "form", cocktail: @cocktail, dose: @dose %>
+
+      <%= link_to "← Back to cocktails", cocktails_path, class: "btn btn-default" %>
+
+    </div>
+  </div>
+</div>

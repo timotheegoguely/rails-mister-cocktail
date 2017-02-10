@@ -1,12 +1,12 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show]
+  before_action :set_cocktail, only: [:show, :edit, :update]
 
   # GET /cocktails
   def index
     @cocktails = Cocktail.all
   end
 
-  # GET /cocktails/1
+  # GET /cocktails/:id
   def show
     @dose = Dose.new
   end
@@ -24,6 +24,15 @@ class CocktailsController < ApplicationController
     else
       render :new
     end
+  end
+
+  # GET /cocktails/:id/edit
+  def edit
+  end
+
+  def update
+    @cocktail.update(cocktail_params)
+    redirect_to cocktail_path(@cocktail)
   end
 
   private
