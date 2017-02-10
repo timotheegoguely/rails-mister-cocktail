@@ -1,14 +1,22 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show]
 
+  # GET /cocktails
   def index
     @cocktails = Cocktail.all
   end
 
+  # GET /cocktails/1
+  def show
+    @dose = Dose.new
+  end
+
+  # GET /cocktails/new
   def new
     @cocktail = Cocktail.new
   end
 
+  # POST /cocktails
   def create
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
@@ -16,10 +24,6 @@ class CocktailsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @dose = Dose.new()
   end
 
   private
@@ -32,7 +36,4 @@ class CocktailsController < ApplicationController
     params.require(:cocktail).permit(:name)
   end
 
-  def ingredients_params
-    params.require(:ingredient).permit(:name)
-  end
 end
