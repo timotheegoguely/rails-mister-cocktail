@@ -4,24 +4,24 @@
   background-size: cover !important;
   color: white;
   position: relative;
-  margin-bottom: $lg;
+  margin-bottom: $size-8;
   border-radius: $border-radius-base;
   &-user {
     position: absolute;
-    right: $md;
-    top: $md;
+    right: $size-4;
+    top: $size-4;
   }
   &-category {
     position: absolute;
-    top: $md;
-    left: $md;
+    top: $size-4;
+    left: $size-4;
     font-size: 13px;
     text-transform: uppercase;
   }
   &-description {
     position: absolute;
-    bottom: $md;
-    left: $md;
+    bottom: $size-4;
+    left: $size-4;
     h3 {
       font-size: 20px;
       margin-top: 0;
